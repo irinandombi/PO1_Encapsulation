@@ -31,6 +31,10 @@ namespace PO1_Encapsulation
                 MessageBox.Show("VOUS ETES MORT");
 
             }
+            if (monstre.EstMort)
+            {
+                MessageBox.Show("vous avez gagné");
+            }
 
         }
 
