@@ -11,10 +11,42 @@ namespace PO1_Encapsulation
         int pointDeVie;
         int attaque;
         int defense;
+        int pointDeVieMaximal;
 
-        public int PointDeVie { get => pointDeVie; set => pointDeVie = value; }
+
+        public int PointDeVie
+        {
+            get => pointDeVie;
+            set
+            {
+                if (value < 0)
+                {
+                    pointDeVie = 0;
+                }
+                else if(value > pointDeVieMaximal) 
+                {
+                    pointDeVie = pointDeVieMaximal;
+                }
+            }
+        }
+
         public int Attaque { get => attaque; set => attaque = value; }
         public int Defense { get => defense; set => defense = value; }
+        public bool EstMort
+        {
+            get
+            {
+                if (pointDeVie == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+
+        }
     }
-   
 }
